@@ -3,4 +3,8 @@
 class Entity{
   int x;
   int y;
+  
+  void display(){
+    rect(x, y, 1, 1);
+  }
 }

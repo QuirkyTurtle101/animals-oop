@@ -1,0 +1,6 @@
+Dog
+Cat
+Tree
+Flower
+Swamp
+Ice
