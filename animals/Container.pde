@@ -56,4 +56,12 @@ class Button extends Entity{
     fill(0);
     text(title, x+10, y+sizeY/2+5);
   }
+  
+  void isClicked(){
+    if(isPressed){
+      isPressed = false;
+    } else {
+      isPressed = true;
+    }
+  }
 }

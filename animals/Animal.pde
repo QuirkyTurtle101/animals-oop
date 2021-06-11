@@ -3,12 +3,28 @@
 class Animal extends Entity{
   int speedX;
   int speedY;
+  
+  void move(){
+    x += speedX;
+    y += speedY;
+  }
 }
 
 class Dog extends Animal{
-  
+  void display(){
+    
+  }
 }
 
-class Cat extends Animal{
+class Human extends Animal{
+  float speedModifier = 1;
   
+  void display(){
+    
+  }
+  
+  void move(){
+    x += speedX;
+    y += speedY;
+  }
 }

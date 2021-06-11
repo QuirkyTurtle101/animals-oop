@@ -13,5 +13,14 @@ void draw(){
 }
 
 void mouseClicked(){
-  
+  if(mouseY < toolbar.toolbarSize){
+    for(Button i : toolbar.buttons){
+      i.isPressed = false;
+      if(i.x < mouseX && mouseX < i.x+i.sizeX){
+        i.isClicked();
+      }
+    }
+  }else{
+    println("not toolbar");
+  }
 }
