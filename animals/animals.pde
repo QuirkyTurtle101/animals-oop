@@ -9,7 +9,15 @@ void setup(){
 }
 
 void draw(){
+  clear();
+  background(255);
   toolbar.display();
+  if(main.entities.size() != 0){
+    for(Entity i : main.entities){
+      i.display();
+      i.act();
+    }
+  }
 }
 
 void mouseClicked(){
@@ -21,6 +29,34 @@ void mouseClicked(){
       }
     }
   }else{
-    println("not toolbar");
+    int temp = 0;
+    for(Button i : toolbar.buttons){
+      if(i.isPressed == true){
+        break;
+      }
+      temp++;
+    }
+    switch(temp){
+      case 0:
+        main.entities.add(new Dog(mouseX, mouseY));
+        break;
+      case 1:
+        main.entities.add(new Human(mouseX, mouseY));
+        break;
+      case 2:
+        main.entities.add(new Tree(mouseX, mouseY));
+        break;
+      case 3:
+        main.entities.add(new Flower(mouseX, mouseY));
+        break;
+      case 4:
+        main.entities.add(new Swamp(mouseX, mouseY));
+        break;
+      case 5:
+        main.entities.add(new Ice(mouseX, mouseY));
+        break;
+      default:
+        break;
+    }
   }
 }

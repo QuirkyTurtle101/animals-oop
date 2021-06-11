@@ -3,8 +3,18 @@
 class Entity{
   int x;
   int y;
+  int size; //this variable isn't used by all entities, but if it's not here, collision detection can't do its thing
+  
+  Entity(int _x, int _y){
+    x = _x;
+    y = _y;
+  }
   
   void display(){
     rect(x, y, 1, 1);
+  }
+  
+  void act(){
+    
   }
 }

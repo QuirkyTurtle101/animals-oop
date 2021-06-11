@@ -3,28 +3,58 @@
 class Animal extends Entity{
   int speedX;
   int speedY;
+  float speedModifier = 1;
   
-  void move(){
-    x += speedX;
-    y += speedY;
+  Animal(int x, int y){
+    super(x, y);
+  }
+  
+  void act(){
+    x += speedX*speedModifier;
+    y += speedY*speedModifier;
+    if(x<0||x>800){
+      speedX = -speedX;
+    }
+    if(y<100||y>600){
+      speedY = -speedY;
+    }
   }
 }
 
 class Dog extends Animal{
+  Dog(int _x, int _y){
+    super(_x, _y);
+    speedX = 2;
+    speedY = 1;
+  }
+  
   void display(){
-    
+    fill(37, 29, 22);
+    ellipse(x, y, 10, 10);
   }
 }
 
 class Human extends Animal{
-  float speedModifier = 1;
-  
-  void display(){
-    
+  Human(int _x, int _y){
+    super(_x, _y);
+    speedX = 1;
+    speedY = 2;
   }
   
-  void move(){
+  void display(){
+    fill(255, 220, 177);
+    rectMode(CENTER);
+    rect(x, y, 20, 20);
+  }
+  
+  void act(){
     x += speedX;
     y += speedY;
+    if(x<0||x>800){
+      speedX = -speedX;
+    }
+    if(y<100||y>600){
+      speedY = -speedY;
+    }
   }
 }

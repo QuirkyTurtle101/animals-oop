@@ -1,9 +1,23 @@
 //this is for our Container class - it contains every object that exists in the game world. we also find the Toolbar container object, obviously for our toolbar, which may not be implemented, as well as related classes.
 
 class Container{
-  ArrayList entities;
+  ArrayList<Entity> entities;
   
+  Container(){
+    entities = new ArrayList<Entity>();
+  }
   
+  void collision(){
+    for(Entity i : entities){
+      for(Entity j : entities){
+        if(i instanceof Terrain && j instanceof Animal){
+          if(dist(i.x, i.y, j.x, j.y) < i.size){
+            //(stuff goes here)
+          }
+        }
+      }
+    }
+  }
 }
 
 class Toolbar{
@@ -25,7 +39,9 @@ class Toolbar{
   }
   
   void display(){
-    rect(0, 0, 799 /*for whatever fucking reason, 800 displays wrong despite being the right size, but 799 displays right. complete wizardry, but whatever, as the Processing gods command i guess*/, toolbarSize);
+    fill(0);
+    rectMode(CORNER);
+    rect(0, 0, 800, toolbarSize);
     for(Button i : buttons){
       i.display();
     }
@@ -39,8 +55,7 @@ class Button extends Entity{
   boolean isPressed = false;
   
   Button(int _x, int _y, int _sizeX, int _sizeY, String _title){
-    x = _x;
-    y = _y;
+    super(_x, _y);
     sizeX = _sizeX;
     sizeY = _sizeY;
     title = _title;
@@ -52,6 +67,7 @@ class Button extends Entity{
     }else{
       fill(255);
     }
+    rectMode(CORNER);
     rect(x, y, sizeX, sizeY);
     fill(0);
     text(title, x+10, y+sizeY/2+5);
