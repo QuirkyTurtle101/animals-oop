@@ -1,8 +1,6 @@
 //this is for the Terrain class and its subclasses - characterized by affecting objects of the Animal class that contact them
 
 class Terrain extends Entity{
-  float speedModifier;
-  
   Terrain(int x, int y){
     super(x, y);
     size = 75;
