@@ -11,7 +11,6 @@ void setup(){
 void draw(){
   clear();
   background(255);
-  toolbar.display();
   if(main.entities.size() != 0){
     if(main.entities.size() > 1){
       main.entities = bubbleSort(main.entities);
@@ -22,7 +21,7 @@ void draw(){
     }
     main.collision();
   }
-  
+  toolbar.display();
 }
 
 void mouseClicked(){
