@@ -2,14 +2,15 @@
 
 class Terrain extends Entity{
   float speedModifier;
-  int size = 100;
   
   Terrain(int x, int y){
     super(x, y);
+    size = 75;
   }
   
   void collisionHandler(Entity target){
     target.speedModifier = speedModifier;
+    target.target = this;
   }
 }
 
@@ -17,7 +18,7 @@ class Swamp extends Terrain{
   
   Swamp(int _x, int _y){
     super(_x, _y);
-    speedModifier = 0.8;
+    speedModifier = 0.4;
     
   }
   
@@ -32,7 +33,7 @@ class Ice extends Terrain{
   
   Ice(int _x, int _y){
     super(_x, _y);
-    speedModifier = 1.2;
+    speedModifier = 1.6;
   }
   
   void display(){

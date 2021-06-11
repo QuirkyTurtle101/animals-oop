@@ -1,4 +1,4 @@
-//this is for our Container class - it contains every object that exists in the game world. we also find the Toolbar container object, obviously for our toolbar, which may not be implemented, as well as related classes.
+//this is for our Container class - it contains every object that exists in the game world. we also find the Toolbar container object, obviously for our toolbar, as well as related classes.
 
 class Container{
   ArrayList<Entity> entities;
@@ -7,10 +7,12 @@ class Container{
     entities = new ArrayList<Entity>();
   }
   
+  //this function handles collision. do not touch it unless it is thoroughly broken.
   void collision(){
     for(Entity i : entities){
       for(Entity j : entities){
         if(i instanceof Terrain && j instanceof Animal){
+          println(dist(i.x, i.y, j.x, j.y), i.size);
           if(dist(i.x, i.y, j.x, j.y) < i.size){
             i.collisionHandler(j);
             println("collision!");
