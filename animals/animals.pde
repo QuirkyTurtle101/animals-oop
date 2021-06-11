@@ -17,7 +17,9 @@ void draw(){
       i.display();
       i.act();
     }
+    main.collision();
   }
+  
 }
 
 void mouseClicked(){

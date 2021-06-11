@@ -3,7 +3,6 @@
 class Animal extends Entity{
   int speedX;
   int speedY;
-  float speedModifier = 1;
   
   Animal(int x, int y){
     super(x, y);
@@ -17,6 +16,10 @@ class Animal extends Entity{
     }
     if(y<100||y>600){
       speedY = -speedY;
+    }
+    if(target != null && dist(x, y, target.x, target.y) > target.size){
+      speedModifier = 1;
+      target = null;
     }
   }
 }

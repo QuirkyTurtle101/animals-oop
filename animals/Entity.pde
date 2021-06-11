@@ -4,6 +4,8 @@ class Entity{
   int x;
   int y;
   int size; //this variable isn't used by all entities, but if it's not here, collision detection can't do its thing
+  float speedModifier = 1; // ditto for this variable
+  Entity target; //and this one too
   
   Entity(int _x, int _y){
     x = _x;
@@ -16,5 +18,9 @@ class Entity{
   
   void act(){
     
+  }
+  
+  void collisionHandler(Entity target){
+    //once again, only used by terrain, but collision detection code means it has to exist here as well, even though only the terrain override will ever be called. fucking processing i swear
   }
 }

@@ -12,7 +12,8 @@ class Container{
       for(Entity j : entities){
         if(i instanceof Terrain && j instanceof Animal){
           if(dist(i.x, i.y, j.x, j.y) < i.size){
-            //(stuff goes here)
+            i.collisionHandler(j);
+            println("collision!");
           }
         }
       }
