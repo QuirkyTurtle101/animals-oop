@@ -1,5 +1,5 @@
 Dog
-Cat
+Human
 Tree
 Flower
 Swamp
