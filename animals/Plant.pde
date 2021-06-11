@@ -22,6 +22,7 @@ class Tree extends Plant{
     size = 10;
     growthLimit = 50;
     growthSpeed = 0.1;
+    priority = 0;
   }
   
   void display(){
@@ -36,6 +37,7 @@ class Flower extends Plant{
     size = 1;
     growthLimit = 5;
     growthSpeed = 0.1;
+    priority = 2;
   }
   
   void display(){

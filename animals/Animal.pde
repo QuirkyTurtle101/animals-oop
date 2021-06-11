@@ -6,6 +6,7 @@ class Animal extends Entity{
   
   Animal(int x, int y){
     super(x, y);
+    priority = 1;
   }
   
   void act(){

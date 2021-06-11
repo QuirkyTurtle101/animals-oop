@@ -6,6 +6,7 @@ class Terrain extends Entity{
   Terrain(int x, int y){
     super(x, y);
     size = 75;
+    priority = 3;
   }
   
   void collisionHandler(Entity target){

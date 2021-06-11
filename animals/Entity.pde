@@ -6,6 +6,7 @@ class Entity{
   int size; //this variable isn't used by all entities, but if it's not here, collision detection can't do its thing
   float speedModifier = 1; // ditto for this variable
   Entity target; //and this one too
+  int priority; //this one is a sorting alg thing - lower numbers render first
   
   Entity(int _x, int _y){
     x = _x;

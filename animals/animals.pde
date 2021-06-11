@@ -13,6 +13,9 @@ void draw(){
   background(255);
   toolbar.display();
   if(main.entities.size() != 0){
+    if(main.entities.size() > 1){
+      main.entities = bubbleSort(main.entities);
+    }
     for(Entity i : main.entities){
       i.display();
       i.act();
